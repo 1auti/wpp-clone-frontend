@@ -1,4 +1,4 @@
-# WhatsApp Clone - Backend
+# WhatsApp Clone - Frontend
 
 Este es el backend de un clon de WhatsApp desarrollado como proyecto Full Stack usando **Spring Boot 3** y **Angular 18**. La aplicación permite una comunicación en tiempo real similar a la de WhatsApp, con autenticación y gestión de usuarios mediante **Keycloak**.
 
