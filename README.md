@@ -1,32 +1,55 @@
-# Whatsapp clone (fullstack project) Spring boot 3, Angular 18, Bootstrap, PostgreSQL, Keycloak (2024) (Backend)
+# WhatsApp Clone - Backend
 
-Spring boot backend of the whatsapp clone
+Este es el backend de un clon de WhatsApp desarrollado como proyecto Full Stack usando **Spring Boot 3** y **Angular 18**. La aplicación permite una comunicación en tiempo real similar a la de WhatsApp, con autenticación y gestión de usuarios mediante **Keycloak**.
 
-[Video tutorial](https://youtu.be/Ot7QE_gzhtA)
+![Captura del clon de WhatsApp](wppproyecto.png) <!-- Reemplaza con la ruta de tu imagen -->
 
-[Angular Frontend](https://github.com/C0de-cake/whatsapp-clone-frontend)
+## Tabla de Contenidos
+- [Características Clave](#características-clave)
+- [Requisitos Previos](#requisitos-previos)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
 
-### Key Features:
-- 💬 Real-time messaging
-- 👥 Conversations management
-- 📁 File sharing (images, videos, documents)
-- 🔐 Authentication and Authorization (Role management) with Keycloak (OAuth2)
-- 🏢 Hexagonal architecture
+## Características Clave
+- 💬 **Mensajería en tiempo real**: Comunicación instantánea y fluida entre usuarios.
+- 👥 **Gestión de conversaciones**: Organización y administración de chats.
+- 📁 **Compartir archivos**: Soporte para imágenes, videos y documentos.
+- 🔐 **Autenticación y autorización**: Gestión de roles y autenticación segura con Keycloak (OAuth2).
+- 🏢 **Arquitectura hexagonal**: Diseño para alta escalabilidad y fácil mantenimiento.
 
-## Usage
-### Prerequisites
-- [JDK 21](https://adoptium.net/temurin/releases/)
-- [PostgreSQL](https://www.postgresql.org/download/)
-- IDE ([VSCode](https://code.visualstudio.com/download), [IntelliJ](https://www.jetbrains.com/idea/download/))
-- Docker ([Docker Desktop](https://docs.docker.com/engine/install/))
+## Requisitos Previos
+- **JDK 21**
+- **PostgreSQL**
+- **IDE** (VSCode, IntelliJ)
+- **Docker** (Docker Desktop)
 
-### Clone the repository
-``git clone https://github.com/C0de-cake/whatsapp-clone-back``
+## Instalación
+Clona el repositorio en tu máquina local:
 
-### Launch
+```bash
+git clone https://github.com/C0de-cake/whatsapp-clone-back
+```
 
-#### Run keycloak
-``docker-compose src/main/docker/keycloak.yml up -d``
+### Ejecución
+1. **Configura Keycloak**:
+   Ejecuta el servicio de Keycloak usando Docker Compose:
 
-#### Maven
-``./mvnw spring-boot:run``
+   ```bash
+   docker-compose -f src/main/docker/keycloak.yml up -d
+   ```
+
+2. **Inicia el backend**:
+   - **Con Maven**:
+     ```bash
+     ./mvnw spring-boot:run -Dspring-boot.run.arguments="--AUTH0_CLIENT_ID=<client-id> --AUTH0_CLIENT_SECRET=<client-secret>"
+     ```
+
+   - **Con IntelliJ**:
+     Agrega las variables de entorno necesarias en la configuración de ejecución y luego inicia el proyecto desde IntelliJ.
+
+## Tecnologías Utilizadas
+- **Backend**: Spring Boot 3, PostgreSQL
+- **Frontend**: Angular 18, Bootstrap
+- **Autenticación**: Keycloak (OAuth2)
+- **Infraestructura**: Docker para despliegue y desarrollo local
